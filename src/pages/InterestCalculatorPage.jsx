@@ -45,7 +45,7 @@ export default function InterestCalculatorPage() {
   const [activeResult, setActiveResult] = useState({ ...emptyResult, loan_status: 'ACTIVE' })
 
   const endpoint = useMemo(() =>
-    mode === 'historical' ? '${API_BASE_URL}/api/historical-loan' : '${API_BASE_URL}/api/active-loan',
+    mode === 'historical' ? `${API_BASE_URL}/api/historical-loan` : `${API_BASE_URL}/api/active-loan`,
     [mode]
   )
 
