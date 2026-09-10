@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
 
 const emptyResult = {
   loan_status: 'HISTORICAL',
@@ -44,7 +45,7 @@ export default function InterestCalculatorPage() {
   const [activeResult, setActiveResult] = useState({ ...emptyResult, loan_status: 'ACTIVE' })
 
   const endpoint = useMemo(() =>
-    mode === 'historical' ? '/api/historical-loan' : '/api/active-loan',
+    mode === 'historical' ? '${API_BASE_URL}/api/historical-loan' : '${API_BASE_URL}/api/active-loan',
     [mode]
   )
 
