@@ -60,7 +60,7 @@ export default function InterestCalculatorPage() {
     event.preventDefault()
     setLoading(true)
     setError('')
-
+    console.log('Submitting form:', form, 'Mode:', mode);
     const payload = {
       principal: Number(form.principal),
       reference_rate: form.referenceRate,
@@ -78,6 +78,7 @@ export default function InterestCalculatorPage() {
         body: JSON.stringify(payload),
       })
       const data = await response.json()
+      console.log('API response:', data, 'Status:', response.status, 'OK:', response.ok);
       if (!response.ok) {
         throw new Error(data.detail || 'The calculator could not complete the request.')
       }
@@ -88,6 +89,7 @@ export default function InterestCalculatorPage() {
         setActiveResult(data)
       }
     } catch (requestError) {
+      console.error('Error during API request:', requestError);
       setError(requestError.message)
     } finally {
       setLoading(false)
