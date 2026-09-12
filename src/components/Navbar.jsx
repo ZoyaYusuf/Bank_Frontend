@@ -27,7 +27,7 @@ export default function Navbar(){
         </div>
 
         <div className="flex items-center gap-3">
-          <Link to="/calculator" className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#1677FF] to-[#1a8cff] px-4 py-2.5 text-sm font-medium text-white shadow-[0_16px_30px_rgba(22,119,255,0.25)] transition hover:brightness-110 no-underline hover:no-underline">
+          <Link to="/calculator" className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#1677FF] to-[#1a8cff] px-4 py-2.5 text-sm font-medium !text-white shadow-[0_16px_30px_rgba(22,119,255,0.25)] transition hover:brightness-110 no-underline hover:no-underline">
             Interest Calculator
           </Link>
         </div>

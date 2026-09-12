@@ -350,8 +350,8 @@ export default function InterestCalculatorPage() {
 
               <div className="rounded-2xl border border-white/10 bg-slate-950/20 p-4">
                 <div className="mb-3 text-sm uppercase tracking-[0.18em] text-slate-300">Rate history</div>
-                <div className="space-y-2">
-                  {(result.rate_history || []).slice(-6).map((entry) => (
+                <div className="space-y-2 max-h-64 overflow-auto">
+                  {(result.rate_history || []).map((entry) => (
                     <div key={entry.date} className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200">
                       <span>{entry.date}</span>
                       <span>{formatPercent(entry.reference_rate)}</span>
@@ -387,7 +387,7 @@ export default function InterestCalculatorPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {(result.daily_interest_breakdown || []).slice(0, 12).map((entry) => (
+                    {(result.daily_interest_breakdown || []).map((entry) => (
                       <tr key={`${entry.date}-${entry.source}`} className="border-t border-white/10 text-slate-200">
                         <td className="py-2">{entry.date}</td>
                         <td className="py-2">{formatPercent(entry.reference_rate)}</td>
