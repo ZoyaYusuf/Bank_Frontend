@@ -322,18 +322,14 @@ export default function InterestCalculatorPage() {
                     </div>
                   </div>
                   {/* issue */}
-                      console.log("0");
                   {result.rate_chart?.latest_observation_date && (
                     <div className="text-xs text-slate-400">
                       Published rates available through {result.rate_chart.latest_observation_date}
                     </div>
                   )}
                 </div>
-                                      console.log("1");
                 {result.rate_chart?.image_base64 ? (
                   <>
-                                        console.log("2");
-
                     <img
                       src={`data:image/png;base64,${result.rate_chart.image_base64}`}
                       alt={`${form.referenceRate} rate fluctuation chart`}
